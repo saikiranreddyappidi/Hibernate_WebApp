@@ -44,12 +44,16 @@
     <h1>Create Employee</h1>
     
     <form action="createEmployeeServlet" method="post">
-        <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" required>
-        
+        <%--@declare id="firstname"--%><%--@declare id="lastname"--%><label for="firstName">First Name:</label>
+        <label>
+            <input type="text" name="firstName" required>
+        </label>
+
         <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" required>
-        
+        <label>
+            <input type="text" name="lastName" required>
+        </label>
+
         <input type="submit" value="Create Employee">
     </form>
 </body>

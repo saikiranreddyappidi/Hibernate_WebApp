@@ -5,13 +5,13 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.driver.class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/webemp</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/railway</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">Kishore@63</property>
-		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="connection.password">database@9440672439</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<mapping class="com.vignan.Employee"></mapping>
+		<mapping class="com.vignan.Employee"/>
 	</session-factory>
 </hibernate-configuration>

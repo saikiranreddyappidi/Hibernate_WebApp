@@ -79,33 +79,35 @@ th {
 			<th>Last Name</th>
 		</tr>
 
-		<% 
-        Session session2 = FactoryProvider.getFactory().openSession();
-            
-            try {
+		<%
+
+            try (Session session2 = FactoryProvider.getFactory().openSession()) {
                 session2.beginTransaction();
                 List<Employee> employees = session2.createQuery("from Employee").getResultList();
-                
+
                 for (Employee employee : employees) {
         %>
-		<tr>
-			<td><%= employee.getId() %></td>
-			<td><%= employee.getFirstName() %></td>
-			<td><%= employee.getLastName() %></td>
-		</tr>
-		<%
+        <tr>
+            <td><%= employee.getId() %>
+            </td>
+            <td><%= employee.getFirstName() %>
+            </td>
+            <td><%= employee.getLastName() %>
+            </td>
+        </tr>
+        <%
                 }
                 session2.getTransaction().commit();
-            } finally {
-            	session2.close();
             }
         %>
 	</table>
 
 	<h2>Delete Employee</h2>
 	<form action="deleteEmployeeServlet" method="post">
-		<label for="id">Employee ID:</label> <input type="text" name="id"
-			required> <input type="submit" value="Delete Employee">
+		<%--@declare id="id"--%><label for="id">Employee ID:</label> <label>
+		<input type="text" name="id"
+			required>
+	</label> <input type="submit" value="Delete Employee">
 	</form>
 </body>
 </html>

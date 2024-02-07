@@ -2,6 +2,8 @@ package com.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serial;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +21,7 @@ import com.vignan.Employee;
 
 @WebServlet("/createEmployeeServlet")
 public class createEmployeeServlet extends HttpServlet {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	public createEmployeeServlet() {

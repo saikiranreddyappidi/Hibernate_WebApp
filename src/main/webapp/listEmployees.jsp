@@ -42,26 +42,25 @@
             <th>Last Name</th>
         </tr>
         
-        <% 
-   
-            Session session2 = FactoryProvider.getFactory().openSession();
-            
-            try {
+        <%
+
+            try (Session session2 = FactoryProvider.getFactory().openSession()) {
                 session2.beginTransaction();
                 List<Employee> employees = session2.createQuery("from Employee").getResultList();
-                
+
                 for (Employee employee : employees) {
         %>
-                <tr>
-                    <td><%= employee.getId() %></td>
-                    <td><%= employee.getFirstName() %></td>
-                    <td><%= employee.getLastName() %></td>
-                </tr>
+        <tr>
+            <td><%= employee.getId() %>
+            </td>
+            <td><%= employee.getFirstName() %>
+            </td>
+            <td><%= employee.getLastName() %>
+            </td>
+        </tr>
         <%
                 }
                 session2.getTransaction().commit();
-            } finally {
-            	session2.close();
             }
         %>
         <div class="container text-center mt-2">
